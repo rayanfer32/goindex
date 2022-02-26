@@ -113,7 +113,7 @@ module.exports = {
     publicPath,
     proxy: {
       "/api": {
-        target: "https://ossdev.achirou.workers.dev/",
+        target: "https://ossdev.node6.workers.dev/",
         ws: true,
         changeOrigin: true,
         pathRewrite: {

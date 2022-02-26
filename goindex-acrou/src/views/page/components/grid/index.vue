@@ -24,7 +24,7 @@
         class="column is-one-quarter"
         v-for="(file, index) in files"
         :key="'file_' + index"
-        @click="action(file, '_blank')"
+        
       >
         <div class="card g2-grid-view-card">
           <div
@@ -34,13 +34,17 @@
                   ? ' g2-grid-view-play'
                   : '')
             "
+            @click="action(file, 'view')"
           >
             <i></i>
-            <figure class="image is-square">
+            <figure 
+            class="image is-square"  
+            >
               <img
                 v-if="file.thumbnailLink"
                 v-lazy="thum(file.thumbnailLink)"
                 :alt="file.name"
+               
               />
               <svg v-else class="file-icon iconfont" aria-hidden="true">
                 <use :xlink:href="getIcon(file.mimeType)" />
@@ -48,7 +52,7 @@
             </figure>
           </div>
           <div class="media g2-grid-view-file">
-            <div class="content" :title="file.name">
+            <div class="content" :title="file.name" @click="action(file, '_blank')">
               <svg class="iconfont" aria-hidden="true">
                 <use :xlink:href="getIcon(file.mimeType)" />
               </svg>
