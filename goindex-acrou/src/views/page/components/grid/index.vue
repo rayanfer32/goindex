@@ -24,7 +24,7 @@
         class="column is-one-quarter"
         v-for="(file, index) in files"
         :key="'file_' + index"
-        @click="action(file, 'view')"
+        @click="action(file, '_blank')"
       >
         <div class="card g2-grid-view-card">
           <div
